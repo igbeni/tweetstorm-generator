@@ -33,7 +33,7 @@ public class TweetstormGeneratorTest {
             assertThat(tweet.length()).isLessThanOrEqualTo(140);
         }
 
-        assertThat(tweets).hasSize(28);
+        assertThat(tweets).hasSize(27);
     }
 
     @Test
@@ -70,6 +70,10 @@ public class TweetstormGeneratorTest {
 
         List<String> tweets = TweetstormGenerator.generateTweetstorm(text);
 
-        assertThat(tweets).hasSize(87);
+        for (String tweet : tweets) {
+            assertThat(tweet.length()).isLessThanOrEqualTo(140);
+        }
+
+        assertThat(tweets).hasSize(84);
     }
 }
